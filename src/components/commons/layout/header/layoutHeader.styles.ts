@@ -13,7 +13,7 @@ export const Row = styled.div`
 `;
 export const HeaderWrapper = styled.div`
   display: flex;
-  margin-left: 1354px;
+  margin-left: ${(props) => (props.data ? "1300px" : "1354px")};
 `;
 
 export const LoginTag = styled.div``;
@@ -47,4 +47,16 @@ export const SellTag = styled.div`
   margin-left: 11px;
   font-weight: 500;
   font-size: 24px;
+`;
+
+export const ChargeTag = styled.div`
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-left: 5px;
+`;
+export const ChargeRow = styled.div`
+  display: flex;
+  flex-direction: row;
 `;

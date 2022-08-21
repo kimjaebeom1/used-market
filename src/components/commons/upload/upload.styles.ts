@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
 export const UploadImg = styled.img`
   width: 180px;
   height: 180px;
+  object-fit: cover;
   margin-right: 44px;
 `;
 

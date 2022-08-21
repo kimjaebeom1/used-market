@@ -21,19 +21,18 @@ export default function ProductList() {
 
   const onClickMoveToProductDetail = (data) => (event) => {
     const newDate = JSON.parse(localStorage.getItem(getDate(date)) || "[]");
+    router.push(`/${event.currentTarget.id}`);
 
     const temp = newDate.filter((el: IBoard) => el._id === data._id);
     if (temp.length === 1) {
       return;
     }
-
     newDate.push(data);
     localStorage.setItem(getDate(date), JSON.stringify(newDate));
 
     setTodays(newDate);
     setIsActive((prev) => !prev);
 
-    router.push(`/${event.currentTarget.id}`);
     console.log(data);
   };
 

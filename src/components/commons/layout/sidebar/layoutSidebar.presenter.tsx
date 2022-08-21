@@ -1,6 +1,6 @@
 import * as S from "./layoutSidebar.styles";
 
-export default function LayoutSidebarUI(props) {
+export default function LayoutSidebarUI(props: any) {
   return (
     <S.Wrapper>
       <div>최근 본 상품</div>

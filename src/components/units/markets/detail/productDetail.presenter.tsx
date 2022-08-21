@@ -1,6 +1,6 @@
 import DOMPurify from "dompurify";
+import PaymentButton from "../../../commons/button/payment";
 import KakaoDetailMap from "../../../commons/detailmap";
-import KakaoMap from "../../../commons/map";
 import ProductCommentList from "../../marketsComment/commentlist/commentList.container";
 import CreateUseditemQuestion from "../../marketsComment/commentwrite/commentWrite.container";
 import * as S from "./productDetail.styles";
@@ -12,12 +12,13 @@ export default function ProductDetailUI(props: any) {
         <S.TopWrapper>
           <S.ImageDiv>
             {" "}
-            {props.data?.fetchUseditem?.images.map((el: string) => (
-              <S.ImageFile
-                key={el}
-                src={`https://storage.googleapis.com/${el}`}
-              />
-            ))}
+            <S.ImageFile
+              src={
+                props.data?.fetchUseditem?.images[0] !== ""
+                  ? `https://storage.googleapis.com/${props.data?.fetchUseditem?.images[0]}`
+                  : `https://storage.googleapis.com/${props.data?.fetchUseditem?.images[1]} `
+              }
+            />
           </S.ImageDiv>
           <S.TopColumn>
             <S.NameWrapper>
@@ -49,7 +50,9 @@ export default function ProductDetailUI(props: any) {
                 <img src="assets/heart.svg" />찜
               </S.SelectBox>
               <S.BasketBox>장바구니</S.BasketBox>
-              <S.DirectBuyingBox>바로구매</S.DirectBuyingBox>
+              <S.DirectBuyingBox onClick={props.onClickPayment}>
+                바로구매
+              </S.DirectBuyingBox>
             </S.BoxWrapper>
           </S.TopColumn>
         </S.TopWrapper>

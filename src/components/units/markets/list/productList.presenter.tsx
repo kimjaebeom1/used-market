@@ -1,6 +1,10 @@
 import * as S from "./productList.styles";
 import InfiniteScroll from "react-infinite-scroller";
-import { getDate } from "../../../../commons/libraries/utils";
+import {
+  getDate,
+  getTime,
+  thisTime,
+} from "../../../../commons/libraries/utils";
 
 export default function ProductListUI(props: any) {
   return (
@@ -24,7 +28,7 @@ export default function ProductListUI(props: any) {
             <S.NameTag id={el._id}>{el.name}</S.NameTag>
             <S.Row>
               <S.PriceTag>{el.price}원</S.PriceTag>
-              {getDate(el.createdAt)}
+              {`${thisTime() - getTime(el.createdAt)} 시간전`}
             </S.Row>
           </S.ListWrapper>
         ))}

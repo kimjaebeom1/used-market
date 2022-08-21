@@ -43,7 +43,7 @@ export const Row = styled.div`
 
 export const PriceTag = styled.div`
   margin-left: 16px;
-  margin-right: 82px;
+  margin-right: 62px;
   font-weight: 500;
   font-size: 16px;
   width: 87px;
