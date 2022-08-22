@@ -21,6 +21,8 @@ export default function Upload(props: any) {
       const result = await uploadFile({
         variables: { file },
       });
+      console.log(result);
+
       props.onChangeFileUrls(result.data.uploadFile.url, props.index);
     } catch (error) {
       Modal.error({ content: error.message });

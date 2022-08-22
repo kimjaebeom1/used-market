@@ -14,12 +14,11 @@ export default function LayoutSidebar() {
   const [isActive, setIsActive] = useRecoilState(localStorageState);
 
   const onClickMoveToStorage = (data) => () => {
-    router.push(`/boards/${data._id}`);
+    router.push(`/${data._id}`);
   };
 
   useEffect(() => {
     const result = JSON.parse(localStorage.getItem(`${getDate(date)}`) || "[]");
-    console.log(result);
     setTodays(result);
   }, [isActive]);
 

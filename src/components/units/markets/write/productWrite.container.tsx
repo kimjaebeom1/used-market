@@ -22,6 +22,12 @@ export default function ProductWrite(props) {
   const { data } = useQuery(FETCH_USER_LOGGED_IN);
 
   useEffect(() => {
+    if (props.data?.fetchUseditem.images?.length) {
+      setFileUrls([...props.data?.fetchUseditem.images]);
+    }
+  }, [props.data]);
+
+  useEffect(() => {
     if (!localStorage.getItem("accessToken")) {
       alert("상품을 등록하려면 로그인이 필요합니다.");
 

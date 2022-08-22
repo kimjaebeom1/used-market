@@ -28,7 +28,7 @@ export default function ProductListUI(props: any) {
             <S.NameTag id={el._id}>{el.name}</S.NameTag>
             <S.Row>
               <S.PriceTag>{el.price}원</S.PriceTag>
-              {`${thisTime() - getTime(el.createdAt)} 시간전`}
+              {`${24 - getTime(el.createdAt)} 시간전`}
             </S.Row>
           </S.ListWrapper>
         ))}

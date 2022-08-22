@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { Modal } from "antd";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -59,4 +60,25 @@ export const ChargeTag = styled.div`
 export const ChargeRow = styled.div`
   display: flex;
   flex-direction: row;
+`;
+export const PaymentModal = styled(Modal)`
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 464px;
+  background: #ffffff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  width: 464px;
+  height: 579px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 700;
+  font-size: 20px;
+`;
+
+export const PaymentSelect = styled.select`
+  width: 384px;
 `;

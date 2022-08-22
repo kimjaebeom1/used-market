@@ -48,6 +48,25 @@ export default function LayoutHeaderUI(props: any) {
         </S.SellWrapper>
       </S.MiddleRow>
       <S.Line />
+
+      {props.isOpen && (
+        <S.PaymentModal
+          okButtonProps={{ style: { display: "none" } }}
+          cancelButtonProps={{ style: { display: "none" } }}
+          visible={true}
+        >
+          <div>충전하실 금액을 선택해주세요!</div>
+
+          <S.PaymentSelect onChange={props.onChangePrice}>
+            <option aria-readonly>포인트 선택</option>
+            <option value="100">100원</option>
+            <option value="500">500원</option>
+            <option value="2000">2000원</option>
+            <option value="5000">5000원</option>
+          </S.PaymentSelect>
+          <button onClick={props.onClickSelectCharge}>충전하기</button>
+        </S.PaymentModal>
+      )}
     </S.Wrapper>
   );
 }

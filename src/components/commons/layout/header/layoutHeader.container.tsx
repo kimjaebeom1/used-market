@@ -1,7 +1,9 @@
 import { useMutation, useQuery } from "@apollo/client";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { useState } from "react";
 import { useRecoilState } from "recoil";
+import { getDate } from "../../../../commons/libraries/utils";
 import { accessTokenState, userInfoState } from "../../../../commons/store";
 import LayoutHeaderUI from "./layoutHeader.presenter";
 import {
@@ -15,6 +17,11 @@ declare const window: typeof globalThis & {
 };
 
 export default function LayoutHeader() {
+  const date = new Date();
+  const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState(100);
+  const [payment, setPayment] = useState();
+
   const { data } = useQuery(FETCH_USER_LOGGED_IN);
   const [logoutUser] = useMutation(LOGOUT_USER);
   const router = useRouter();
@@ -22,28 +29,54 @@ export default function LayoutHeader() {
     CREATE_POINT_TRANSACTION_OF_LOADING
   );
 
-  console.log(logoutUser);
-  const onClickCharge = () => {
-    const IMP = window.IMP; // 생략 가능
-    IMP.init("imp49910675"); // Example: imp00000000
+  const onChangePrice = (event) => {
+    setSelected(event?.target.value);
+  };
+
+  const onClickCharge = async () => {
+    setIsOpen(true);
+  };
+
+  const onClickLogout = () => {
+    logoutUser();
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("userInfo");
+    localStorage.removeItem(`${getDate(date)}`);
+    location.reload();
+  };
+
+  const onClickAddressModal = () => {
+    setIsOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsOpen(false);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
+  const onClickSelectCharge = () => {
+    setIsOpen(false);
+    const payment = selected;
+    const IMP = window.IMP;
+    IMP.init("imp49910675");
     IMP.request_pay(
       {
-        // param
         pg: "nice",
         pay_method: "card",
-        // merchant_uid: "ORD20180131-0000011", // 상품 id (주문번호), 중복되면안됨   // iamport - 결제연동 - 내 식별코드 -APIKeys
+
         name: "충전하기",
-        amount: 100, // 최소금액 100원임
-        buyer_email: "nanyong0214@gmail.com", // 영수증을 받고싶을때 구매자 이메일
+        amount: payment,
+        buyer_email: "nanyong0214@gmail.com",
         buyer_name: "홍길동",
         buyer_tel: "010-4242-4242",
         buyer_addr: "서울특별시 강남구 신사동",
         buyer_postcode: "01181",
-        m_redirect_url: "http:/localhost:3000", // 모바일은 페이지가 아예 결제페이지로 바뀌기 때문에 결제가 끝나고 이쪽으로 보내주세요
+        m_redirect_url: "http:/localhost:3000",
       },
       async (rsp) => {
-        // rep : response
-        // callback
         console.log("분기 전", rsp);
         if (rsp.success) {
           //   // 결제 성공 시 로직,
@@ -53,7 +86,7 @@ export default function LayoutHeader() {
               amount: rsp.paid_amount,
             },
           });
-          router.push("/");
+          location.reload();
           console.log(result);
         } else {
           //   // 결제 실패 시 로직,
@@ -62,10 +95,6 @@ export default function LayoutHeader() {
         }
       }
     );
-  };
-
-  const onClickLogout = () => {
-    logoutUser();
   };
 
   return (
@@ -84,9 +113,13 @@ export default function LayoutHeader() {
       </Head>
 
       <LayoutHeaderUI
+        isOpen={isOpen}
         data={data}
         onClickLogout={onClickLogout}
         onClickCharge={onClickCharge}
+        onChangePrice={onChangePrice}
+        closeModal={closeModal}
+        onClickSelectCharge={onClickSelectCharge}
       />
     </>
   );

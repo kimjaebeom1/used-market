@@ -133,6 +133,8 @@ export const RegisterBtn = styled.button`
 
 export const AddressSearchInput = styled(DaumPostcodeEmbed)``;
 
+export const PaymentButton = styled.button``;
+
 export const AddressModal = styled(Modal)`
   position: fixed;
   top: 50%;

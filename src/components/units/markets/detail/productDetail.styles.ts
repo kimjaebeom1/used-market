@@ -106,6 +106,7 @@ export const BasketBox = styled.button`
   font-size: 30px;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `;
 
 export const DirectBuyingBox = styled.button`
@@ -122,6 +123,7 @@ export const DirectBuyingBox = styled.button`
   font-size: 30px;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `;
 
 // left bottom

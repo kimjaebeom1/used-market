@@ -49,7 +49,9 @@ export default function ProductDetailUI(props: any) {
               <S.SelectBox>
                 <img src="assets/heart.svg" />찜
               </S.SelectBox>
-              <S.BasketBox>장바구니</S.BasketBox>
+              <S.BasketBox onClick={props.onClickBasket()}>
+                장바구니
+              </S.BasketBox>
               <S.DirectBuyingBox onClick={props.onClickPayment}>
                 바로구매
               </S.DirectBuyingBox>

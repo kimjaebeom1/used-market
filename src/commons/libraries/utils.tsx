@@ -12,8 +12,8 @@ export const getTime = (value) => {
   return `${hh}`;
 };
 
-export const thisTime = () => {
-  const date = new Date();
+export const thisTime = (value) => {
+  const date = new Date(value);
   const hh = String(date.getHours());
   return `${hh}`;
 };

@@ -1,6 +1,5 @@
 import { gql, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
 import ProductWrite from "../../../src/components/units/markets/write/productWrite.container";
 
 const FETCH_USED_ITEM = gql`
@@ -27,6 +26,8 @@ export default function ProductEditPage() {
   const { data } = useQuery(FETCH_USED_ITEM, {
     variables: { useditemId: String(router.query.id) },
   });
+
+  console.log(data);
 
   return <ProductWrite isEdit={true} data={data} />;
 }
