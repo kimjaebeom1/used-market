@@ -15,7 +15,6 @@ export default function ProductDetail(props) {
   const [createPointTransactionOfBuyingAndSelling] = useMutation(
     CREATE_POINT_TRANSACTION_OF_BUYING_AND_SELLING
   );
-
   const { data } = useQuery(FETCH_USED_ITEM, {
     variables: { useditemId: String(router.query.id) },
   });
@@ -43,9 +42,10 @@ export default function ProductDetail(props) {
         useritemId: router.query.id,
       },
     });
+    console.log(result);
+
     router.push("/");
     location.reload();
-    console.log(result);
   };
 
   // 장바구니

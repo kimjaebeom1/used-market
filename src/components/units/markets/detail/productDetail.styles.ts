@@ -29,7 +29,7 @@ export const NameWrapper = styled.div`
 export const NameTag = styled.div`
   font-weight: 700;
   font-size: 24px;
-  width: 137px;
+  width: 200px;
 `;
 
 export const IconWrapper = styled.div`
