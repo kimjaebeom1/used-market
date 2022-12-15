@@ -33,7 +33,7 @@ export default function ProductList() {
     setTodays(newDate);
     setIsActive((prev) => !prev);
 
-    console.log(data);
+    console.log(temp);
   };
 
   const onLoadMore = () => {

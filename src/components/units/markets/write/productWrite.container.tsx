@@ -27,13 +27,13 @@ export default function ProductWrite(props) {
     }
   }, [props.data]);
 
-  useEffect(() => {
-    if (!localStorage.getItem("accessToken")) {
-      alert("상품을 등록하려면 로그인이 필요합니다.");
+  // useEffect(() => {
+  //   if (!localStorage.getItem("accessToken")) {
+  //     alert("상품을 등록하려면 로그인이 필요합니다.");
 
-      router.push("/login");
-    }
-  }, []);
+  //     router.push("/login");
+  //   }
+  // }, []);
 
   const onChangeContents = (value: string) => {
     console.log(value);
