@@ -12,12 +12,10 @@ export default function LayoutSidebar() {
   const router = useRouter();
   const { onClickMoveToPage } = useMoveToPage();
   const [isActive, setIsActive] = useRecoilState(localStorageState);
-  g;
+
   const onClickMoveToStorage = (data) => () => {
     router.push(`/${data._id}`);
   };
-
-  const onClickDeleteStorage = () => {};
 
   useEffect(() => {
     const result = JSON.parse(localStorage.getItem(`${getDate(date)}`) || "[]");

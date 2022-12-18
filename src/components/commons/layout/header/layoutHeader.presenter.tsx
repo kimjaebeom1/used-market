@@ -37,7 +37,7 @@ export default function LayoutHeaderUI(props: any) {
       <S.MiddleRow>
         <div>
           <Link href="/">
-            <img src="/assets/logo.svg" />
+            <h1>폴리마켓</h1>
           </Link>
         </div>
         <S.SellWrapper>

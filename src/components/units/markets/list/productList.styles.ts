@@ -49,3 +49,8 @@ export const PriceTag = styled.div`
   width: 87px;
   height: 25px;
 `;
+
+export const TimeTag = styled.div`
+  margin-left: 20px;
+  color: blue;
+`;

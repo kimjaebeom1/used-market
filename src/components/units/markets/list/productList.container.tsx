@@ -20,7 +20,7 @@ export default function ProductList() {
   });
 
   const onClickMoveToProductDetail = (data) => (event) => {
-    const newDate = JSON.parse(localStorage.getItem(getDate(date)) || "[]");
+    let newDate = JSON.parse(localStorage.getItem(getDate(date)) || "[]");
     router.push(`/${event.currentTarget.id}`);
 
     const temp = newDate.filter((el: IBoard) => el._id === data._id);
@@ -28,12 +28,18 @@ export default function ProductList() {
       return;
     }
     newDate.push(data);
+    if (newDate.length >= 3) {
+      const tempList = [];
+      for (let i = newDate.length - 3; i < newDate.length; i++) {
+        tempList.push(newDate[i]);
+      }
+      newDate = tempList;
+    }
+
     localStorage.setItem(getDate(date), JSON.stringify(newDate));
 
     setTodays(newDate);
     setIsActive((prev) => !prev);
-
-    console.log(temp);
   };
 
   const onLoadMore = () => {
