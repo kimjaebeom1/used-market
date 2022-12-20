@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   display: flex;
   width: 1920px;
   flex-direction: column;
+  font-weight: bold;
 `;
 export const Row = styled.div`
   display: flex;
@@ -24,17 +25,19 @@ export const SignUpTag = styled.div`
 `;
 export const BasketTag = styled.div`
   margin-left: 45.15px;
+  cursor: pointer;
 `;
 
 export const Line = styled.div`
-  border-top: 1px solid black;
+  border-top: 1px solid #cdcdcd;
 `;
 export const MiddleRow = styled.div`
   display: flex;
   flex-direction: row;
   height: 157px;
   align-items: center;
-  margin-left: 273px;
+  width: 100%;
+  padding-left: 273px;
 `;
 export const SellWrapper = styled.div`
   display: flex;
@@ -71,7 +74,7 @@ export const PaymentModal = styled(Modal)`
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   width: 464px;
-  height: 579px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;

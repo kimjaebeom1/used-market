@@ -1,13 +1,13 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  margin-left: 1685px;
+  position: fixed;
+  right: 15px;
+  margin-top: 79px;
   width: 155px;
   height: 373px;
-  border: 1px solid #000000;
-  position: absolute;
+  border: 1px solid #cdcdcd;
   z-index: 2;
-  top: 219px;
   font-weight: 500;
   font-size: 16px;
   display: flex;

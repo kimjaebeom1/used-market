@@ -75,38 +75,22 @@ export const TopColumn = styled.div`
 export const BoxWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
 `;
 
 export const SelectBox = styled.button`
   display: flex;
   flex-direction: row;
   margin-top: 35px;
-  background-color: black;
   width: 152px;
   height: 100px;
   border: none;
-  color: white;
   font-weight: 700;
   font-size: 30px;
   justify-content: center;
   align-items: center;
-`;
-
-export const BasketBox = styled.button`
-  display: flex;
-  flex-direction: column;
-  margin-left: 22px;
-  margin-top: 35px;
-  background: #a0a0a0;
-  width: 312px;
-  height: 100px;
-  border: none;
-  color: white;
-  font-weight: 700;
-  font-size: 30px;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+  color: black;
+  border-radius: 10px;
 `;
 
 export const DirectBuyingBox = styled.button`
@@ -114,16 +98,16 @@ export const DirectBuyingBox = styled.button`
   flex-direction: column;
   margin-left: 22px;
   margin-top: 35px;
-  background-color: black;
   width: 312px;
   height: 100px;
   border: none;
-  color: white;
+  color: black;
   font-weight: 700;
   font-size: 30px;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  border-radius: 10px;
 `;
 
 // left bottom
@@ -164,6 +148,7 @@ export const MapTag = styled.div`
   flex-direction: row;
   font-weight: 500;
   font-size: 24px;
+  align-items: center;
 `;
 
 export const ColumnLine = styled.div`

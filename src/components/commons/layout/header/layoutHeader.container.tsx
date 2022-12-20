@@ -21,7 +21,6 @@ export default function LayoutHeader() {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState(100);
   const [payment, setPayment] = useState();
-
   const { data } = useQuery(FETCH_USER_LOGGED_IN);
   const [logoutUser] = useMutation(LOGOUT_USER);
   const router = useRouter();
@@ -49,7 +48,7 @@ export default function LayoutHeader() {
     setIsOpen(true);
   };
 
-  const handleOk = () => {
+  const handleCancel = () => {
     setIsOpen(false);
   };
 
@@ -120,6 +119,7 @@ export default function LayoutHeader() {
         onChangePrice={onChangePrice}
         closeModal={closeModal}
         onClickSelectCharge={onClickSelectCharge}
+        handleCancel={handleCancel}
       />
     </>
   );

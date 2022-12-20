@@ -30,14 +30,19 @@ export default function LayoutHeaderUI(props: any) {
               <Link href="/signup">회원가입</Link>
             )}
           </S.SignUpTag>
-          <S.BasketTag>장바구니</S.BasketTag>
         </S.HeaderWrapper>
       </S.Row>
       <S.Line />
       <S.MiddleRow>
         <div>
           <Link href="/">
-            <h1>폴리마켓</h1>
+            <h1
+              style={{
+                cursor: "pointer",
+              }}
+            >
+              중고마켓
+            </h1>
           </Link>
         </div>
         <S.SellWrapper>
@@ -51,6 +56,8 @@ export default function LayoutHeaderUI(props: any) {
 
       {props.isOpen && (
         <S.PaymentModal
+          onCancel={props.handleCancel}
+          centered={true}
           okButtonProps={{ style: { display: "none" } }}
           cancelButtonProps={{ style: { display: "none" } }}
           visible={true}

@@ -1,24 +1,23 @@
 import styled from "@emotion/styled";
 
-export const HeaderWrapper = styled.div`
-  background-color: black;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  padding-left: 50px;
+export const Wrapper = styled.div`
+  margin: 0 auto;
 `;
 
 export const BodyWrapper = styled.div`
-  height: 1188px;
   background-color: #f8f8f8;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 25px;
 `;
 export const SignupWrapper = styled.div`
   width: 1200px;
   display: flex;
   flex-direction: column;
+  box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.07);
+  border-radius: 10px;
+  background: #ffffff;
 `;
 export const Row = styled.div`
   display: flex;
@@ -83,6 +82,7 @@ export const SignupBtn = styled.button`
   font-weight: 500;
   font-size: 20px;
   border: none;
+  cursor: pointer;
 `;
 export const CancelBtn = styled.button`
   margin-top: 87px;
@@ -93,21 +93,33 @@ export const CancelBtn = styled.button`
   color: white;
   font-weight: 500;
   font-size: 20px;
+  cursor: pointer;
 `;
 export const BottomWrapper = styled.div`
-  margin-top: 47px;
+  margin-top: 30px;
   display: flex;
   flex-direction: row;
+  padding-bottom: 10px;
+  align-items: center;
 `;
 
 export const LoginTag = styled.div`
   margin-left: 21px;
   text-decoration: underline;
   font-weight: 500;
+  font-size: 20px;
 `;
 
 export const ErrorTag = styled.div`
+  display: flex;
   color: red;
+  font-size: 16px;
+  width: 786px;
+  padding-left: 110px;
+`;
+
+export const ConfirmTag = styled.div`
+  color: #888888;
   font-size: 16px;
   margin-right: 250px;
 `;

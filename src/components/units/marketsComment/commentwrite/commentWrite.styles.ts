@@ -27,7 +27,7 @@ export const CommentsBtn = styled.button`
   height: 42px;
   font-weight: 700;
   font-size: 20px;
-  background: #ffe004;
+  border-radius: 10px;
   position: relative;
   left: ${(props) => (props.isEdit ? "147px" : "260px")};
   cursor: pointer;

@@ -47,11 +47,22 @@ export default function ProductDetailUI(props: any) {
             <S.RemarksLine />
             <S.BoxWrapper>
               <S.SelectBox>
-                <img src="assets/heart.svg" />찜
+                <img
+                  onClick={props.onClickToggle}
+                  style={{
+                    marginRight: "8px",
+                    cursor: "pointer",
+                  }}
+                  src="assets/heart.svg"
+                />
+                <div
+                  style={{
+                    color: "black",
+                  }}
+                >
+                  {props.data?.fetchUseditem.pickedCount}
+                </div>
               </S.SelectBox>
-              <S.BasketBox onClick={props.onClickBasket()}>
-                장바구니
-              </S.BasketBox>
               <S.DirectBuyingBox onClick={props.onClickPayment}>
                 바로구매
               </S.DirectBuyingBox>
@@ -76,6 +87,7 @@ export default function ProductDetailUI(props: any) {
             <S.MapTag>
               <img
                 style={{
+                  marginRight: "10px",
                   width: "23px",
                   height: "29px",
                 }}

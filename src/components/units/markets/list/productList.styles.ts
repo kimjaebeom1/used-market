@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  margin-top: 79px;
+  padding-top: 79px;
   display: flex;
   flex-direction: row;
   margin-left: 273px;
@@ -19,38 +19,44 @@ export const ListWrapper = styled.div`
   margin-right: 33px;
   margin-bottom: 32px;
   cursor: pointer;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
 `;
 
 export const ImageFile = styled.img`
-  width: 237.5px;
+  width: 240px;
   height: 221px;
+  border-radius: 10px;
 `;
 
 export const NameTag = styled.div`
-  margin-top: 16px;
+  padding-top: 8px;
   font-weight: 500;
   font-size: 16px;
   width: 130px;
   height: 25px;
-  margin-left: 16px;
+  padding-left: 8px;
+  color: #878787;
 `;
 
 export const Row = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
   margin-top: 15px;
 `;
 
 export const PriceTag = styled.div`
-  margin-left: 16px;
   margin-right: 62px;
-  font-weight: 500;
+  font-weight: bold;
   font-size: 16px;
   width: 87px;
   height: 25px;
+  color: #010101;
 `;
 
 export const TimeTag = styled.div`
-  margin-left: 20px;
-  color: blue;
+  color: #ff7d9e;
+  font-weight: bold;
 `;

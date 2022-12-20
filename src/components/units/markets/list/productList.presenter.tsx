@@ -28,7 +28,7 @@ export default function ProductListUI(props: any) {
 
             <S.NameTag id={el._id}>{el.name}</S.NameTag>
             <S.Row>
-              <S.PriceTag>{el.price}원</S.PriceTag>
+              <S.PriceTag>{el.price?.toLocaleString()}원</S.PriceTag>
               <S.TimeTag>{timeForToday(el.createdAt)}</S.TimeTag>
             </S.Row>
           </S.ListWrapper>

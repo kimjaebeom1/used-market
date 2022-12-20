@@ -1,25 +1,19 @@
 import styled from "@emotion/styled";
 
-export const HeaderWrapper = styled.div`
-  background-color: black;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  padding-left: 50px;
+export const Wrapper = styled.div`
+  margin: 0 auto;
 `;
 
 export const BodyWrapper = styled.div`
-  height: 1188px;
   background-color: #f8f8f8;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 25px;
 `;
 export const LoginWrapper = styled.div`
   padding-top: 81px;
   width: 742px;
-  height: 802px;
-
   display: flex;
   flex-direction: column;
   background: #ffffff;
@@ -62,7 +56,7 @@ export const InformationWrapper = styled.div`
 `;
 
 export const InformationInput = styled.input`
-  margin-bottom: 68px;
+  margin-top: 30px;
   padding-left: 37px;
   margin-left: 55px;
   width: 600px;
@@ -82,6 +76,7 @@ export const LoginBtn = styled.button`
   font-weight: 500;
   font-size: 20px;
   border: none;
+  cursor: pointer;
 `;
 export const BottomWrapper = styled.div`
   margin-top: 47px;
@@ -89,16 +84,19 @@ export const BottomWrapper = styled.div`
   flex-direction: row;
   font-weight: 400;
   font-size: 18px;
+  padding-bottom: 10px;
 `;
 
 export const LoginTag = styled.div`
   margin-left: 21px;
   text-decoration: underline;
   font-weight: 500;
+  font-size: 20px;
 `;
 
 export const ErrorTag = styled.div`
   color: red;
   font-size: 16px;
-  margin-right: 250px;
+  width: 600px;
+  padding-left: 28px;
 `;
